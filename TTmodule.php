@@ -74,7 +74,8 @@ class TTmodule extends Module
         return parent::install() &&
             $this->registerHook('header') &&
             $this->registerHook('backOfficeHeader') &&
-            $this->registerHook('displayFooter');
+            $this->registerHook('displayFooter') &&
+            $this->createTabLink();
     }
 
     public function uninstall()
@@ -104,6 +105,18 @@ class TTmodule extends Module
         $output = $this->context->smarty->fetch($this->local_path.'views/templates/admin/configure.tpl');
 
         return $output.$this->renderForm();
+    }
+
+    public function createTabLink() {
+        $tab = new Tab;
+        foreach(Language::getLanguages() as $lang) {
+            $tab->name[$lang['id_lang']] = $this->l('Tadmin');
+        }
+        $tab->class_name = 'Tadmin';
+        $tab->module = $this->name;
+        $tab->id_parent = 0;
+        $tab->add();
+        return true;
     }
 
     /**
@@ -235,4 +248,5 @@ class TTmodule extends Module
         /*return 'Хук тестового модуля.';*/
 
     }
+
 }

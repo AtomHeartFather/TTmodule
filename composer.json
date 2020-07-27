@@ -1,0 +1,13 @@
+{
+  "name": "me/ttmodule",
+  "description": "module description",
+  "autoload": {
+    "psr-4": {
+      "MyModule\\Controller\\": "Controllers/"
+    }
+  },
+  "config": {
+    "prepend-autoloader": false
+  },
+  "type": "prestashop-module"
+}

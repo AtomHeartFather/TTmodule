@@ -1,0 +1,6 @@
+# modules/your-module/config/routes.yml
+your_route_name:
+  path: TTmodule/tadmin
+  methods: [GET]
+  defaults:
+    _controller: 'TTmodule\Controller\TadminController::tadminAction'
