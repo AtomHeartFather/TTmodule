@@ -1,15 +1,15 @@
 <?php
 /**
- * <ModuleName> => TTmodule
+ * <ModuleName> => ttmodule
  * <FileName> => tfront.php
  * Format expected: <ModuleName><FileName>ModuleFrontController
  */
-class TTmoduleTfrontModuleFrontController extends ModuleFrontController
+class ttmoduleTfrontModuleFrontController extends ModuleFrontController
 {
 
     public function initContent() {
         parent::initContent();
         /*$this->contex->smarty->assign(array());*/
-        $this->setTemplate('module:TTmodule/views/templates/front/tfront.tpl');
+        $this->setTemplate('module:ttmodule/views/templates/front/tfront.tpl');
     }
 }

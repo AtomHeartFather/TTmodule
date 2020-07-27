@@ -30,13 +30,13 @@ if (!defined('_PS_VERSION_')) {
 
 include(dirname(__FILE__).'/model/TTModel.php');
 
-class TTmodule extends Module
+class ttmodule extends Module
 {
     protected $config_form = false;
 
     public function __construct()
     {
-        $this->name = 'TTmodule';
+        $this->name = 'ttmodule';
         $this->tab = 'search_filter';
         $this->version = '1.0.0';
         $this->author = 'Egor Iaklich';
