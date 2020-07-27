@@ -214,7 +214,7 @@ class TTmodule extends Module
     public function hookDisplayFooter()
     {
 
-        $db = \Db::getInstance();
+        /*$db = \Db::getInstance();
         $T1 = TT::getT1();
         $T2 = TT::getT2();
         $request = 'SELECT COUNT(*) FROM `ps_product` WHERE `price` >= ' . $T1 . ' AND `price` <= ' . $T2 . '';
@@ -230,7 +230,9 @@ class TTmodule extends Module
           'productCount' => $productCount
         ]);
 
-        return $this->display(__FILE__, 'ttmodule.tpl');
+        return $this->display(__FILE__, 'ttmodule.tpl');*/
+
+        /*return 'Хук тестового модуля.';*/
 
     }
 }
