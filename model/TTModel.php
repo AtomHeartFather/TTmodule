@@ -28,7 +28,6 @@ class TT extends ObjectModel
                     SELECT max(`id`) 
                     FROM `'._DB_PREFIX_.'tt`
                     )';
-        /*return Db::getInstance()->executeS($sql);*/
         return Db::getInstance()->getValue($sql);
     }
 
@@ -40,7 +39,6 @@ class TT extends ObjectModel
                     SELECT max(`id`) 
                     FROM `'._DB_PREFIX_.'tt`
                     )';
-        /*return Db::getInstance()->executeS($sql);*/
         return Db::getInstance()->getValue($sql);
     }
 

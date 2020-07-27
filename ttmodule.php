@@ -61,15 +61,10 @@ class ttmodule extends Module
      */
     public function install()
     {
-        /*Configuration::updateValue('TTMODULE_NUMBER_1', '0');
-        Configuration::updateValue('TTMODULE_NUMBER_2', '999999999');*/
-
         $tt = new tt();
         $tt->t1 = 0;
         $tt->t2 = 999999;
         $tt->save();
-
-        /*include(dirname(__FILE__).'/sql/install.php');*/
 
         return parent::install() &&
             $this->registerHook('header') &&
@@ -80,9 +75,6 @@ class ttmodule extends Module
 
     public function uninstall()
     {
-        /*Configuration::deleteByName('TTMODULE_NUMBER_1');
-        Configuration::deleteByName('TTMODULE_NUMBER_2');*/
-
         include(dirname(__FILE__).'/sql/uninstall.php');
 
         return parent::uninstall();
@@ -93,9 +85,6 @@ class ttmodule extends Module
      */
     public function getContent()
     {
-        /**
-         * If values have been submitted in the form, process.
-         */
         if (((bool)Tools::isSubmit('submitTTmoduleModule')) == true) {
             $this->postProcess();
         }
@@ -184,8 +173,6 @@ class ttmodule extends Module
      */
     protected function getConfigFormValues()
     {
-        /*$t1 = ;
-        $t2 = ;*/
         return array(
             't1_tt' => TT::getT1(),
             't2_tt' => TT::getT2(),
@@ -226,14 +213,11 @@ class ttmodule extends Module
 
     public function hookDisplayFooter()
     {
-
         /*$db = \Db::getInstance();
         $T1 = TT::getT1();
         $T2 = TT::getT2();
         $request = 'SELECT COUNT(*) FROM `ps_product` WHERE `price` >= ' . $T1 . ' AND `price` <= ' . $T2 . '';
         $productCount = $db->getValue($request);
-
-
        
         $this->context->smarty->assign([
           'TTMODULE_COUNT' => $productCount,
@@ -244,9 +228,7 @@ class ttmodule extends Module
         ]);
 
         return $this->display(__FILE__, 'ttmodule.tpl');*/
-
         /*return 'Хук тестового модуля.';*/
-
     }
 
 }
