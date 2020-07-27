@@ -219,7 +219,7 @@ class TTmodule extends Module
         $T2 = TT::getT2();
         $request = 'SELECT COUNT(*) FROM `ps_product` WHERE `price` >= ' . $T1 . ' AND `price` <= ' . $T2 . '';
         $productCount = $db->getValue($request);
-        /*$productCount = $db->executeS($request);*/
+
 
        
         $this->context->smarty->assign([
